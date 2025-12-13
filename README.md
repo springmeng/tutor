@@ -324,19 +324,19 @@ const baseURL = 'https://your-domain.com'; // 生产环境API地址
 
 
 #### 首页展示
-![QQ20251125-110401](C:\Users\Admin\Desktop\家教预约\图片\QQ20251125-110401.png)
+![输入图片说明](picture/QQ20251125-110401.png)
 
 #### 家长端
-![QQ20251125-110415](C:\Users\Admin\Desktop\家教预约\图片\QQ20251125-110415.png)
+![输入图片说明](picture/QQ20251125-110415.png)
 
 #### 教师端
-![QQ20251125-110422](C:\Users\Admin\Desktop\家教预约\图片\QQ20251125-110422.png)
+![输入图片说明](picture/QQ20251125-110422.png)
 
 #### 订单流程
-![QQ20251125-110451](C:\Users\Admin\Desktop\家教预约\图片\QQ20251125-110451.png)
+![输入图片说明](picture/QQ20251125-110451.png)
 
 #### 个人中心
-![QQ20251125-110428](C:\Users\Admin\Desktop\家教预约\图片\QQ20251125-110428.png)
+![输入图片说明](picture/QQ20251125-110428.png)
 
 </div>
 
@@ -350,7 +350,7 @@ const baseURL = 'https://your-domain.com'; // 生产环境API地址
 
 ### 扫码体验
 
-![gh_54a792d85e39_258](E:\download\gh_54a792d85e39_258.jpg)
+![输入图片说明](picture/gh_54a792d85e39_258.jpg)
 
 **使用微信扫描上方二维码即可体验**
 
