@@ -20,7 +20,7 @@ import com.tutor.system.service.ISysConfigService;
 /**
  * 参数配置 服务层实现
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Service
 public class SysConfigServiceImpl implements ISysConfigService

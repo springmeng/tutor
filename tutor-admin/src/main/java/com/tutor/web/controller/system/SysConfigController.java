@@ -25,7 +25,7 @@ import com.tutor.system.service.ISysConfigService;
 /**
  * 参数配置 信息操作处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 @RequestMapping("/system/config")

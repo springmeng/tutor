@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 微信用户Mapper接口
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-06
  */
 public interface TWxUserMapper

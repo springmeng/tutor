@@ -5,7 +5,7 @@ import com.tutor.common.exception.base.BaseException;
 /**
  * 管理员信息异常类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class UserException extends BaseException
 {

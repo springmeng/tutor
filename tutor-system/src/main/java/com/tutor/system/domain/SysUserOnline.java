@@ -3,7 +3,7 @@ package com.tutor.system.domain;
 /**
  * 当前在线会话
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysUserOnline
 {

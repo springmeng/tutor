@@ -23,7 +23,7 @@ import com.tutor.system.service.ISysNoticeService;
 /**
  * 公告 信息操作处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 @RequestMapping("/system/notice")

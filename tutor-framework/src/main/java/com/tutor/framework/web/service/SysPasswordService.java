@@ -16,7 +16,7 @@ import com.tutor.framework.security.context.AuthenticationContextHolder;
 /**
  * 登录密码方法
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component
 public class SysPasswordService

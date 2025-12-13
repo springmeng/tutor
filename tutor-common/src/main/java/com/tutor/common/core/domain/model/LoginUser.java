@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * 登录管理员身份权限
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class LoginUser implements UserDetails
 {

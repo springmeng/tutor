@@ -8,7 +8,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 学生信息对象 t_student_info
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-05
  */
 public class TStudentInfo extends BaseEntity

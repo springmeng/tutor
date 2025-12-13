@@ -5,7 +5,7 @@ import com.tutor.system.domain.TTutorQualification;
 /**
  * 教师资格信息Mapper接口
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-04
  */
 public interface TTutorQualificationMapper

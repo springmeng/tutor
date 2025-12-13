@@ -16,7 +16,7 @@ import com.tutor.common.utils.StringUtils;
 /**
  * 图片处理工具类
  *
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class ImageUtils
 {

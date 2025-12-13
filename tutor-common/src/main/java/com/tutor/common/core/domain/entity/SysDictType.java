@@ -12,7 +12,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 字典类型表 sys_dict_type
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysDictType extends BaseEntity
 {

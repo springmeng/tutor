@@ -11,7 +11,7 @@ import javax.net.ssl.SSLContext;
 /**
  * HTTP请求工具类
  * 
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-17
  */
 public class HttpClientUtil

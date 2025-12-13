@@ -10,7 +10,7 @@ import com.tutor.quartz.service.ISysJobLogService;
 /**
  * 定时任务调度日志信息 服务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Service
 public class SysJobLogServiceImpl implements ISysJobLogService

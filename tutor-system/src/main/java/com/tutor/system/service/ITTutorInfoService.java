@@ -7,7 +7,7 @@ import com.tutor.system.domain.TTutorInfo;
 /**
  * 家教信息Service接口
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-04
  */
 public interface ITTutorInfoService

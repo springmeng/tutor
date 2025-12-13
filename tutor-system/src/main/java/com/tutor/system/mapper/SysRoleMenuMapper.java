@@ -6,7 +6,7 @@ import com.tutor.system.domain.SysRoleMenu;
 /**
  * 角色与菜单关联表 数据层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface SysRoleMenuMapper
 {

@@ -6,7 +6,7 @@ import com.tutor.system.domain.SysOperLog;
 /**
  * 操作日志 服务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface ISysOperLogService
 {

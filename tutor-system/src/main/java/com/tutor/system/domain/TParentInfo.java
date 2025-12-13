@@ -11,7 +11,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 家长信息对象 t_parent_info
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-05
  */
 public class TParentInfo extends BaseEntity

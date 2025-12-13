@@ -7,7 +7,7 @@ import com.tutor.system.domain.SysUserRole;
 /**
  * 管理员与角色关联表 数据层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface SysUserRoleMapper
 {

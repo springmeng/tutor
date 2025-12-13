@@ -22,7 +22,7 @@ import com.tutor.framework.web.service.TokenService;
 /**
  * 自定义退出处理类 返回成功
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Configuration
 public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler

@@ -12,7 +12,7 @@ import com.tutor.common.constant.Constants;
 /**
  * 资源文件配置加载
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Configuration
 public class I18nConfig implements WebMvcConfigurer

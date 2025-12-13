@@ -6,7 +6,7 @@ import com.tutor.generator.domain.GenTable;
 /**
  * 业务 数据层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface GenTableMapper
 {

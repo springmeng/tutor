@@ -36,7 +36,7 @@ import com.tutor.system.domain.SysOperLog;
 /**
  * 操作日志记录处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Aspect
 @Component

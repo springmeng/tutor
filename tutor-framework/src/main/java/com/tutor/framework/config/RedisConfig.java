@@ -12,7 +12,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**
  * redis配置
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Configuration
 @EnableCaching

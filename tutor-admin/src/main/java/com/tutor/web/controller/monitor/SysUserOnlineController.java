@@ -26,7 +26,7 @@ import com.tutor.system.service.ISysUserOnlineService;
 /**
  * 在线管理员监控
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 @RequestMapping("/monitor/online")

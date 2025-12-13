@@ -22,7 +22,7 @@ import com.tutor.system.service.ISysUserService;
 /**
  * 注册校验方法
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component
 public class SysRegisterService

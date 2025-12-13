@@ -19,7 +19,7 @@ import com.tutor.framework.web.service.TokenService;
 /**
  * token过滤器 验证token有效性
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter

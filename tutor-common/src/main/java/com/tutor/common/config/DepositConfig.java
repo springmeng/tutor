@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * 押金配置
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-25
  */
 @Configuration

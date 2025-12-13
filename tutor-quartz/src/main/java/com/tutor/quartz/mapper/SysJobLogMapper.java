@@ -6,7 +6,7 @@ import com.tutor.quartz.domain.SysJobLog;
 /**
  * 调度任务日志信息 数据层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface SysJobLogMapper
 {

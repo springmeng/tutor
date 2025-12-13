@@ -6,7 +6,7 @@ import com.tutor.common.utils.StringUtils;
 /**
  * 基础异常
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class BaseException extends RuntimeException
 {

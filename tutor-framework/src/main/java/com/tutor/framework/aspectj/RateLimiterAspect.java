@@ -22,7 +22,7 @@ import com.tutor.common.utils.ip.IpUtils;
 /**
  * 限流处理
  *
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Aspect
 @Component

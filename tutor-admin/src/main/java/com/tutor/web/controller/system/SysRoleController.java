@@ -34,7 +34,7 @@ import com.tutor.system.service.ISysUserService;
 /**
  * 角色信息
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 @RequestMapping("/system/role")

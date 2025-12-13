@@ -6,7 +6,7 @@ import com.tutor.system.domain.SysUserOnline;
 /**
  * 在线管理员 服务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface ISysUserOnlineService
 {

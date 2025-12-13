@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiOperation;
 /**
  * swagger 管理员测试方法
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Api("管理员信息管理")
 @RestController

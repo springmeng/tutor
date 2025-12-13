@@ -23,7 +23,7 @@ import com.tutor.system.service.ISysConfigService;
 /**
  * 验证码操作处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 public class CaptchaController

@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 数据源切换处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class DynamicDataSourceContextHolder
 {

@@ -18,7 +18,7 @@ import com.tutor.quartz.service.ISysJobLogService;
 /**
  * 抽象quartz调用
  *
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public abstract class AbstractQuartzJob implements Job
 {

@@ -7,7 +7,7 @@ import com.tutor.common.core.domain.entity.SysDept;
 /**
  * 部门管理 数据层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface SysDeptMapper
 {

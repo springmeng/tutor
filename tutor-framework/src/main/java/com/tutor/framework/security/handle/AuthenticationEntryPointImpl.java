@@ -16,7 +16,7 @@ import com.tutor.common.utils.StringUtils;
 /**
  * 认证失败处理类 返回未授权
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component
 public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint, Serializable

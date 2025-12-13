@@ -6,7 +6,7 @@ import com.tutor.system.domain.SysUserPost;
 /**
  * 管理员与岗位关联表 数据层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface SysUserPostMapper
 {

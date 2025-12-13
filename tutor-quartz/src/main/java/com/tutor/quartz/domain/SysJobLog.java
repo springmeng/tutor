@@ -9,7 +9,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 定时任务调度日志表 sys_job_log
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysJobLog extends BaseEntity
 {

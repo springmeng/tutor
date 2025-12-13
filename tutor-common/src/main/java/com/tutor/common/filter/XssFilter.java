@@ -17,7 +17,7 @@ import com.tutor.common.enums.HttpMethod;
 /**
  * 防止XSS攻击的过滤器
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class XssFilter implements Filter
 {

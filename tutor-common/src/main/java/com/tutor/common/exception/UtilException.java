@@ -3,7 +3,7 @@ package com.tutor.common.exception;
 /**
  * 工具类异常
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class UtilException extends RuntimeException
 {

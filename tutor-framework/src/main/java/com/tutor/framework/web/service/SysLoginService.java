@@ -31,7 +31,7 @@ import com.tutor.system.service.ISysUserService;
 /**
  * 登录校验方法
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component
 public class SysLoginService

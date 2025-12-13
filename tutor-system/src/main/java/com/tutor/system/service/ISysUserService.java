@@ -7,7 +7,7 @@ import com.tutor.common.core.domain.entity.SysUser;
 /**
  * 管理员 业务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface ISysUserService
 {

@@ -13,7 +13,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 角色表 sys_role
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysRole extends BaseEntity
 {

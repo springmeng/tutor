@@ -11,7 +11,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 微信小程序用户对象 t_wx_user
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-06
  */
 public class TWxUser extends BaseEntity

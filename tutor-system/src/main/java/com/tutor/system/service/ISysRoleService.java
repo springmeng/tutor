@@ -8,7 +8,7 @@ import com.tutor.system.domain.SysUserRole;
 /**
  * 角色业务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface ISysRoleService
 {

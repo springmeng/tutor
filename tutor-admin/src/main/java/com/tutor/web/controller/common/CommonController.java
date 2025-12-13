@@ -23,7 +23,7 @@ import com.tutor.framework.config.ServerConfig;
 /**
  * 通用请求处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 @RequestMapping("/common")

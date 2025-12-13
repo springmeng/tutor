@@ -12,7 +12,7 @@ import com.tutor.common.utils.poi.ExcelHandlerAdapter;
 /**
  * 自定义导出Excel数据注解
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

@@ -3,7 +3,7 @@ package com.tutor.common.exception.user;
 /**
  * 管理员密码不正确或不符合规范异常类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class UserPasswordNotMatchException extends UserException
 {

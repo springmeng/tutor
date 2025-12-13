@@ -15,7 +15,7 @@ import com.tutor.common.constant.Constants;
 /**
  * 构建可重复读取inputStream的request
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class RepeatedlyRequestWrapper extends HttpServletRequestWrapper
 {

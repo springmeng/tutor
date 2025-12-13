@@ -10,7 +10,7 @@ import static com.google.code.kaptcha.Constants.*;
 /**
  * 验证码配置
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Configuration
 public class CaptchaConfig

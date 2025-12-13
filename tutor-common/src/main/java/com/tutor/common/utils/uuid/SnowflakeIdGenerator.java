@@ -13,7 +13,7 @@ package com.tutor.common.utils.uuid;
  *
  * 转换为10位数字ID: 取64位ID的后10位数字
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-12
  */
 public class SnowflakeIdGenerator

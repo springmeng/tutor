@@ -6,7 +6,7 @@ import com.tutor.quartz.domain.SysJob;
 /**
  * 调度任务信息 数据层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface SysJobMapper
 {

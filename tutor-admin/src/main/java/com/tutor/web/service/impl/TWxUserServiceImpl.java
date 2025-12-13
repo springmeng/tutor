@@ -26,7 +26,7 @@ import com.tutor.system.service.ITWxUserService;
 /**
  * 微信用户Service业务层处理
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-06
  */
 @Service

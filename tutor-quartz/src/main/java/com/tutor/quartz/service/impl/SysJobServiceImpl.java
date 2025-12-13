@@ -20,7 +20,7 @@ import com.tutor.quartz.util.ScheduleUtils;
 /**
  * 定时任务调度信息 服务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Service
 public class SysJobServiceImpl implements ISysJobService

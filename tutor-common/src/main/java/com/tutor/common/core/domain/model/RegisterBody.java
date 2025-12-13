@@ -3,7 +3,7 @@ package com.tutor.common.core.domain.model;
 /**
  * 管理员注册对象
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class RegisterBody extends LoginBody
 {

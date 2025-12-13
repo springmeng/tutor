@@ -6,7 +6,7 @@ import com.tutor.system.domain.TParentInfo;
 /**
  * 家长信息Mapper接口
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-05
  */
 public interface TParentInfoMapper

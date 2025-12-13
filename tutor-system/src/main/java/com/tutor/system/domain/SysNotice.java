@@ -10,7 +10,7 @@ import com.tutor.common.xss.Xss;
 /**
  * 通知公告表 sys_notice
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysNotice extends BaseEntity
 {

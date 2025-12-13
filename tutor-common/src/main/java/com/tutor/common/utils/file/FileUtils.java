@@ -23,7 +23,7 @@ import com.tutor.common.utils.uuid.IdUtils;
 /**
  * 文件处理工具类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class FileUtils
 {

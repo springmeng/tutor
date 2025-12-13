@@ -11,7 +11,7 @@ import com.tutor.generator.domain.GenTableColumn;
 /**
  * 代码生成器 工具类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class GenUtils
 {

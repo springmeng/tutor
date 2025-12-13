@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 /**
  * HTML过滤器，用于去除XSS漏洞隐患。
  *
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public final class HTMLFilter
 {

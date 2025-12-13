@@ -26,7 +26,7 @@ import org.springframework.http.MediaType;
 /**
  * 通用http发送方法
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class HttpUtils
 {

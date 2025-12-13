@@ -25,7 +25,7 @@ import com.tutor.system.service.ISysPostService;
 /**
  * 岗位信息操作处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 @RequestMapping("/system/post")

@@ -7,7 +7,7 @@ import com.tutor.common.utils.ServletUtils;
 /**
  * 服务相关配置
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component
 public class ServerConfig

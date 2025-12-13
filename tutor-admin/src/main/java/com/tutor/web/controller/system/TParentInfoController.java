@@ -24,7 +24,7 @@ import com.tutor.common.core.page.TableDataInfo;
 /**
  * 家长信息Controller
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-05
  */
 @RestController

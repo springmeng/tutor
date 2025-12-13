@@ -11,7 +11,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 参数配置表 sys_config
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysConfig extends BaseEntity
 {

@@ -27,7 +27,7 @@ import com.tutor.system.service.ISysMenuService;
 /**
  * 登录验证
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @RestController
 public class SysLoginController

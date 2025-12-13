@@ -8,7 +8,7 @@ import com.tutor.quartz.domain.SysJob;
 /**
  * 定时任务调度信息信息 服务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface ISysJobService
 {

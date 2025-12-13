@@ -23,7 +23,7 @@ import java.util.Map;
 /**
  * 微信小程序登录Controller
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-06
  */
 @RestController

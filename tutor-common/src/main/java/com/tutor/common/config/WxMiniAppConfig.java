@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * 微信小程序配置
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  */
 @Component
 @ConfigurationProperties(prefix = "wx.miniapp")

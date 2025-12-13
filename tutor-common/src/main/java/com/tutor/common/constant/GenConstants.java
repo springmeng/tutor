@@ -3,7 +3,7 @@ package com.tutor.common.constant;
 /**
  * 代码生成通用常量
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class GenConstants
 {

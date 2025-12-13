@@ -7,7 +7,7 @@ import com.tutor.common.core.text.Convert;
 /**
  * 权限信息
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class PermissionContextHolder
 {

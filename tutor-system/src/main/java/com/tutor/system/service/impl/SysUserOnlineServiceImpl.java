@@ -9,7 +9,7 @@ import com.tutor.system.service.ISysUserOnlineService;
 /**
  * 在线管理员 服务层处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Service
 public class SysUserOnlineServiceImpl implements ISysUserOnlineService

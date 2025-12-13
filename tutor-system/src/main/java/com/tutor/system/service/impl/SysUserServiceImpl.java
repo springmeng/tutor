@@ -35,7 +35,7 @@ import com.tutor.system.service.ISysUserService;
 /**
  * 管理员 业务层处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Service
 public class SysUserServiceImpl implements ISysUserService

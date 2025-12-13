@@ -17,7 +17,7 @@ import com.tutor.common.utils.StringUtils;
 /**
  * Filter配置
  *
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Configuration
 public class FilterConfig

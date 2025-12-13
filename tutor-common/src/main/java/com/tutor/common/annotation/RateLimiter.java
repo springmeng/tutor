@@ -11,7 +11,7 @@ import com.tutor.common.enums.LimitType;
 /**
  * 限流注解
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

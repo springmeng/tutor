@@ -13,7 +13,7 @@ import com.tutor.framework.security.context.PermissionContextHolder;
 /**
  * RuoYi首创 自定义权限实现，ss取自SpringSecurity首字母
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Service("ss")
 public class PermissionService

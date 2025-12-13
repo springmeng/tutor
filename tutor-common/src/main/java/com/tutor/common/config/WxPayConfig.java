@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 微信支付配置
  * 
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-17
  */
 @Configuration

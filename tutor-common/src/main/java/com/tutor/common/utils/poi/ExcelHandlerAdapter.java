@@ -6,7 +6,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 /**
  * Excel数据格式处理适配器
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface ExcelHandlerAdapter
 {

@@ -16,7 +16,7 @@ import com.tutor.common.exception.ServiceException;
 /**
  * 安全服务工具类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SecurityUtils
 {

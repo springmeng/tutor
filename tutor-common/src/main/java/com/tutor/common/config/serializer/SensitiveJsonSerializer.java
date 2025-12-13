@@ -16,7 +16,7 @@ import com.tutor.common.utils.SecurityUtils;
 /**
  * 数据脱敏序列化过滤
  *
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SensitiveJsonSerializer extends JsonSerializer<String> implements ContextualSerializer
 {

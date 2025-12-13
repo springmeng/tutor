@@ -3,7 +3,7 @@ package com.tutor.common.utils;
 /**
  * 处理并记录日志文件
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class LogUtils
 {

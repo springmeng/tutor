@@ -20,7 +20,7 @@ import com.tutor.common.core.text.Convert;
 /**
  * 客户端工具类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class ServletUtils
 {

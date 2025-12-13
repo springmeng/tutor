@@ -19,7 +19,7 @@ import com.tutor.common.utils.uuid.Seq;
 /**
  * 文件上传工具类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class FileUploadUtils
 {

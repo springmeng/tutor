@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * 教师资格信息对象 t_tutor_qualification
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-04
  */
 public class TTutorQualification

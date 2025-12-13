@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * 微信用户Service接口
  *
- * @author tutor
+ * @author：小孟微信：codemeng
  * @date 2025-11-06
  */
 public interface ITWxUserService

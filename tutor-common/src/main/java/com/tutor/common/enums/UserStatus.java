@@ -3,7 +3,7 @@ package com.tutor.common.enums;
 /**
  * 管理员状态
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public enum UserStatus
 {

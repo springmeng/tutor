@@ -6,7 +6,7 @@ import com.tutor.quartz.domain.SysJob;
 /**
  * 定时任务处理（允许并发执行）
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  *
  */
 public class QuartzJobExecution extends AbstractQuartzJob

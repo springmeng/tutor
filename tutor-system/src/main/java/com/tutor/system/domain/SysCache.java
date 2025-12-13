@@ -5,7 +5,7 @@ import com.tutor.common.utils.StringUtils;
 /**
  * 缓存信息
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysCache
 {

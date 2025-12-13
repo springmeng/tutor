@@ -24,7 +24,7 @@ import com.tutor.system.service.ISysDeptService;
 /**
  * 部门管理 服务实现
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Service
 public class SysDeptServiceImpl implements ISysDeptService

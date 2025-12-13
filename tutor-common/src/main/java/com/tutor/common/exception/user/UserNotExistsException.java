@@ -3,7 +3,7 @@ package com.tutor.common.exception.user;
 /**
  * 管理员不存在异常类
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class UserNotExistsException extends UserException
 {

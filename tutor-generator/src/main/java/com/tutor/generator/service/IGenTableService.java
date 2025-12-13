@@ -7,7 +7,7 @@ import com.tutor.generator.domain.GenTable;
 /**
  * 业务 服务层
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public interface IGenTableService
 {

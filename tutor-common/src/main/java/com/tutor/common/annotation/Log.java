@@ -11,7 +11,7 @@ import com.tutor.common.enums.OperatorType;
 /**
  * 自定义操作日志记录注解
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  *
  */
 @Target({ ElementType.PARAMETER, ElementType.METHOD })

@@ -12,7 +12,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 菜单权限表 sys_menu
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysMenu extends BaseEntity
 {

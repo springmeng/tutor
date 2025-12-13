@@ -6,7 +6,7 @@ import com.tutor.common.utils.StringUtils;
 /**
  * 定时任务调度测试
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component("ryTask")
 public class RyTask

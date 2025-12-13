@@ -16,7 +16,7 @@ import com.tutor.system.service.ISysRoleService;
 /**
  * 管理员权限处理
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 @Component
 public class SysPermissionService

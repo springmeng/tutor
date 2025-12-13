@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * 管理员和角色关联 sys_user_role
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysUserRole
 {

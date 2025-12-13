@@ -3,7 +3,7 @@ package com.tutor.common.constant;
 /**
  * 管理员常量信息
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class UserConstants
 {

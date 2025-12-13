@@ -12,7 +12,7 @@ import com.tutor.common.core.domain.BaseEntity;
 /**
  * 字典数据表 sys_dict_data
  * 
- * @author ruoyi
+ * @author：小孟微信：codemeng
  */
 public class SysDictData extends BaseEntity
 {
