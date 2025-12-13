@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tutor.system.mapper.TStudentInfoMapper">
+
+    <resultMap type="TStudentInfo" id="TStudentInfoResult">
+        <result property="studentId"    column="student_id"    />
+        <result property="studentNo"    column="student_no"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="studentName"    column="student_name"    />
+        <result property="gender"    column="gender"    />
+        <result property="age"    column="age"    />
+        <result property="gradeId"    column="grade_id"    />
+        <result property="school"    column="school"    />
+        <result property="academicPerformance"    column="academic_performance"    />
+        <result property="constellation"    column="constellation"    />
+        <result property="otherInfo"    column="other_info"    />
+        <result property="interestInK12Lab"    column="interest_in_k12_lab"    />
+        <result property="acceptEduInnovation"    column="accept_edu_innovation"    />
+        <result property="status"    column="status"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="parentName"    column="parent_name"    />
+        <result property="gradeName"    column="grade_name"    />
+    </resultMap>
+
+    <sql id="selectTStudentInfoVo">
+        select s.student_id, s.student_no, s.parent_id, s.student_name, s.gender, s.age,
+               s.grade_id, s.school, s.academic_performance, s.constellation, s.other_info,
+               s.interest_in_k12_lab, s.accept_edu_innovation, s.status, s.del_flag,
+               s.create_by, s.create_time, s.update_by, s.update_time, s.remark,
+               p.parent_name
+        from t_student_info s
+        left join t_parent_info p on s.parent_id = p.parent_id
+    </sql>
+
+    <select id="selectTStudentInfoList" parameterType="TStudentInfo" resultMap="TStudentInfoResult">
+        <include refid="selectTStudentInfoVo"/>
+        <where>
+            s.del_flag = '0'
+            <if test="studentNo != null  and studentNo != ''"> and s.student_no like concat('%', #{studentNo}, '%')</if>
+            <if test="parentId != null "> and s.parent_id = #{parentId}</if>
+            <if test="studentName != null  and studentName != ''"> and s.student_name like concat('%', #{studentName}, '%')</if>
+            <if test="gender != null  and gender != ''"> and s.gender = #{gender}</if>
+            <if test="gradeId != null "> and s.grade_id = #{gradeId}</if>
+            <if test="status != null  and status != ''"> and s.status = #{status}</if>
+            <if test="interestInK12Lab != null  and interestInK12Lab != ''"> and s.interest_in_k12_lab = #{interestInK12Lab}</if>
+            <if test="acceptEduInnovation != null  and acceptEduInnovation != ''"> and s.accept_edu_innovation = #{acceptEduInnovation}</if>
+        </where>
+        order by s.create_time desc
+    </select>
+
+    <select id="selectTStudentInfoByStudentId" parameterType="Long" resultMap="TStudentInfoResult">
+        <include refid="selectTStudentInfoVo"/>
+        where s.student_id = #{studentId}
+        limit 1
+    </select>
+
+    <insert id="insertTStudentInfo" parameterType="TStudentInfo" useGeneratedKeys="true" keyProperty="studentId">
+        insert into t_student_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="studentNo != null">student_no,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="studentName != null and studentName != ''">student_name,</if>
+            <if test="gender != null">gender,</if>
+            <if test="age != null">age,</if>
+            <if test="gradeId != null">grade_id,</if>
+            <if test="school != null">school,</if>
+            <if test="academicPerformance != null">academic_performance,</if>
+            <if test="constellation != null">constellation,</if>
+            <if test="otherInfo != null">other_info,</if>
+            <if test="interestInK12Lab != null">interest_in_k12_lab,</if>
+            <if test="acceptEduInnovation != null">accept_edu_innovation,</if>
+            <if test="status != null">status,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="studentNo != null">#{studentNo},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="studentName != null and studentName != ''">#{studentName},</if>
+            <if test="gender != null">#{gender},</if>
+            <if test="age != null">#{age},</if>
+            <if test="gradeId != null">#{gradeId},</if>
+            <if test="school != null">#{school},</if>
+            <if test="academicPerformance != null">#{academicPerformance},</if>
+            <if test="constellation != null">#{constellation},</if>
+            <if test="otherInfo != null">#{otherInfo},</if>
+            <if test="interestInK12Lab != null">#{interestInK12Lab},</if>
+            <if test="acceptEduInnovation != null">#{acceptEduInnovation},</if>
+            <if test="status != null">#{status},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTStudentInfo" parameterType="TStudentInfo">
+        update t_student_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="studentNo != null">student_no = #{studentNo},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="studentName != null and studentName != ''">student_name = #{studentName},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="age != null">age = #{age},</if>
+            <if test="gradeId != null">grade_id = #{gradeId},</if>
+            <if test="school != null">school = #{school},</if>
+            <if test="academicPerformance != null">academic_performance = #{academicPerformance},</if>
+            <if test="constellation != null">constellation = #{constellation},</if>
+            <if test="otherInfo != null">other_info = #{otherInfo},</if>
+            <if test="interestInK12Lab != null">interest_in_k12_lab = #{interestInK12Lab},</if>
+            <if test="acceptEduInnovation != null">accept_edu_innovation = #{acceptEduInnovation},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where student_id = #{studentId}
+    </update>
+
+    <delete id="deleteTStudentInfoByStudentId" parameterType="Long">
+        update t_student_info set del_flag = '2' where student_id = #{studentId}
+    </delete>
+
+    <delete id="deleteTStudentInfoByStudentIds" parameterType="String">
+        update t_student_info set del_flag = '2' where student_id in
+        <foreach item="studentId" collection="array" open="(" separator="," close=")">
+            #{studentId}
+        </foreach>
+    </delete>
+
+    <select id="checkStudentNoUnique" parameterType="String" resultMap="TStudentInfoResult">
+        select student_id, student_no from t_student_info where student_no = #{studentNo} and del_flag = '0' limit 1
+    </select>
+
+    <select id="countStudentsByParentId" parameterType="Long" resultType="int">
+        select count(*) from t_student_info where parent_id = #{parentId} and del_flag = '0'
+    </select>
+
+</mapper>

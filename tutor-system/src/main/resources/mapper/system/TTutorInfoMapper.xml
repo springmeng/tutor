@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tutor.system.mapper.TTutorInfoMapper">
+
+    <resultMap type="TTutorInfo" id="TTutorInfoResult">
+        <result property="tutorId"    column="tutor_id"    />
+        <result property="tutorNo"    column="tutor_no"    />
+        <result property="province"    column="province"    />
+        <result property="city"    column="city"    />
+        <result property="district"    column="district"    />
+        <result property="address"    column="address"    />
+        <result property="longitude"    column="longitude"    />
+        <result property="latitude"    column="latitude"    />
+        <result property="nativePlace"    column="native_place"    />
+        <result property="tutorName"    column="tutor_name"    />
+        <result property="gender"    column="gender"    />
+        <result property="age"    column="age"    />
+        <result property="phone"    column="phone"    />
+        <result property="avatarImages"    column="avatar_images"    />
+        <result property="teacherType"    column="teacher_type"    />
+        <result property="crimeRecordCert"    column="crime_record_cert"    />
+        <result property="idCard"    column="id_card"    />
+        <result property="openid"    column="openid"    />
+        <result property="likeCount"    column="like_count"    />
+        <result property="gradeId"    column="grade_id"    />
+        <result property="gradeName"    column="grade_name"    />
+        <result property="university"    column="university"    />
+        <result property="major"    column="major"    />
+        <result property="subjectIds"    column="subject_ids"    />
+        <result property="subjectNames"    column="subject_names"    />
+        <result property="tutorableGradeIds"    column="tutorable_grade_ids"    />
+        <result property="tutorableGradeNames"    column="tutorable_grade_names"    />
+        <result property="studentRequire"    column="student_require"    />
+        <result property="teachingMode"    column="teaching_mode"    />
+        <result property="availableTime"    column="available_time"    />
+        <result property="expectedSalary"    column="expected_salary"    />
+        <result property="trialTime"    column="trial_time"    />
+        <result property="middleScore"    column="middle_score"    />
+        <result property="highScore"    column="high_score"    />
+        <result property="constellation"    column="constellation"    />
+        <result property="serviceCount"    column="service_count"    />
+        <result property="avgScore"    column="avg_score"    />
+        <result property="points"    column="points"    />
+        <result property="labHours"    column="lab_hours"    />
+        <result property="diyHours"    column="diy_hours"    />
+        <result property="acceptMinimalist"    column="accept_minimalist"    />
+        <result property="otherInfo"    column="other_info"    />
+        <result property="personalProfile"    column="personal_profile"    />
+        <result property="status"    column="status"    />
+        <result property="auditStatus"    column="audit_status"    />
+        <result property="auditTime"    column="audit_time"    />
+        <result property="auditRemark"    column="audit_remark"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="depositAmount"    column="deposit_amount"    />
+        <result property="depositTransactionId"    column="deposit_transaction_id"    />
+        <result property="depositStatus"    column="deposit_status"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <association property="qualification" column="tutor_id" javaType="TTutorQualification" resultMap="qualificationResult" />
+    </resultMap>
+
+    <resultMap id="qualificationResult" type="TTutorQualification">
+        <result property="qualificationId"    column="qualification_id"    />
+        <result property="tutorId"    column="tutor_id"    />
+        <result property="teacherCertificate"    column="teacher_certificate"    />
+        <result property="teachingExperience"    column="teaching_experience"    />
+        <result property="characterIntro"    column="character_intro"    />
+        <result property="honorImages"    column="honor_images"    />
+        <result property="otherAdvantage"    column="other_advantage"    />
+        <result property="resumeUrl"    column="resume_url"    />
+    </resultMap>
+
+    <sql id="selectTTutorInfoVo">
+        select t.tutor_id, t.tutor_no, t.province, t.city, t.district, t.address, t.longitude, t.latitude, t.native_place,
+               t.tutor_name, t.gender, t.age, t.phone, t.avatar_images, t.teacher_type, t.crime_record_cert, t.id_card, t.openid, t.like_count, t.grade_id,
+               t.university, t.major, t.subject_ids, t.tutorable_grade_ids,
+               t.student_require, t.teaching_mode, t.available_time, t.expected_salary, t.trial_time,
+               t.middle_score, t.high_score, t.constellation, t.service_count, t.avg_score, t.points,
+               t.lab_hours, t.diy_hours, t.accept_minimalist, t.other_info, t.personal_profile,
+               t.status, t.audit_status, t.audit_time, t.audit_remark,
+               t.del_flag, t.deposit_amount, t.deposit_transaction_id, t.deposit_status,
+               t.create_by, t.create_time, t.update_by, t.update_time, t.remark,
+               q.qualification_id, q.teacher_certificate, q.teaching_experience, q.character_intro,
+               q.honor_images, q.other_advantage, q.resume_url
+        from t_tutor_info t
+        left join t_tutor_qualification q on t.tutor_id = q.tutor_id
+    </sql>
+
+    <select id="selectTTutorInfoList" parameterType="TTutorInfo" resultMap="TTutorInfoResult">
+        <include refid="selectTTutorInfoVo"/>
+        <where>
+            t.del_flag = '0'
+            <if test="tutorNo != null  and tutorNo != ''"> and t.tutor_no like concat('%', #{tutorNo}, '%')</if>
+            <if test="tutorName != null  and tutorName != ''"> and t.tutor_name like concat('%', #{tutorName}, '%')</if>
+            <if test="gender != null  and gender != ''"> and t.gender = #{gender}</if>
+            <if test="phone != null  and phone != ''"> and t.phone = #{phone}</if>
+            <if test="gradeId != null "> and t.grade_id = #{gradeId}</if>
+            <if test="status != null  and status != ''"> and t.status = #{status}</if>
+            <if test="auditStatus != null  and auditStatus != ''"> and t.audit_status = #{auditStatus}</if>
+            <if test="acceptMinimalist != null  and acceptMinimalist != ''"> and t.accept_minimalist = #{acceptMinimalist}</if>
+            <if test="params.beginTime != null and params.beginTime != ''">
+                and date_format(t.create_time,'%y%m%d') &gt;= date_format(#{params.beginTime},'%y%m%d')
+            </if>
+            <if test="params.endTime != null and params.endTime != ''">
+                and date_format(t.create_time,'%y%m%d') &lt;= date_format(#{params.endTime},'%y%m%d')
+            </if>
+        </where>
+        order by t.create_time desc
+    </select>
+
+    <select id="selectTTutorInfoListOrderByLike" resultMap="TTutorInfoResult">
+        <include refid="selectTTutorInfoVo"/>
+        <where>
+            t.del_flag = '0'
+            <if test="query.status != null and query.status != ''"> and t.status = #{query.status}</if>
+            <if test="query.auditStatus != null and query.auditStatus != ''"> and t.audit_status = #{query.auditStatus}</if>
+        </where>
+        order by t.like_count desc, t.create_time desc
+        <if test="limit != null">
+            limit #{limit}
+        </if>
+    </select>
+
+    <select id="selectTTutorInfoByTutorId" parameterType="Long" resultMap="TTutorInfoResult">
+        <include refid="selectTTutorInfoVo"/>
+        where t.tutor_id = #{tutorId}
+        limit 1
+    </select>
+
+    <select id="selectTTutorInfoByOpenid" parameterType="String" resultMap="TTutorInfoResult">
+        <include refid="selectTTutorInfoVo"/>
+        where t.openid = #{openid} and t.del_flag = '0'
+        limit 1
+    </select>
+
+    <select id="checkTutorNoUnique" parameterType="String" resultMap="TTutorInfoResult">
+        select tutor_id, tutor_no from t_tutor_info where tutor_no = #{tutorNo} and del_flag = '0' limit 1
+    </select>
+
+    <insert id="insertTTutorInfo" parameterType="TTutorInfo" useGeneratedKeys="true" keyProperty="tutorId">
+        insert into t_tutor_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="tutorNo != null and tutorNo != ''">tutor_no,</if>
+            <if test="province != null and province != ''">province,</if>
+            <if test="city != null and city != ''">city,</if>
+            <if test="district != null and district != ''">district,</if>
+            <if test="address != null and address != ''">address,</if>
+            <if test="longitude != null">longitude,</if>
+            <if test="latitude != null">latitude,</if>
+            <if test="nativePlace != null and nativePlace != ''">native_place,</if>
+            <if test="tutorName != null and tutorName != ''">tutor_name,</if>
+            <if test="gender != null and gender != ''">gender,</if>
+            <if test="age != null">age,</if>
+            <if test="phone != null and phone != ''">phone,</if>
+            <if test="avatarImages != null and avatarImages != ''">avatar_images,</if>
+            <if test="teacherType != null and teacherType != ''">teacher_type,</if>
+            <if test="crimeRecordCert != null and crimeRecordCert != ''">crime_record_cert,</if>
+            <if test="idCard != null and idCard != ''">id_card,</if>
+            <if test="openid != null and openid != ''">openid,</if>
+            <if test="gradeId != null">grade_id,</if>
+            <if test="university != null and university != ''">university,</if>
+            <if test="major != null and major != ''">major,</if>
+            <if test="subjectIds != null and subjectIds != ''">subject_ids,</if>
+            <if test="tutorableGradeIds != null and tutorableGradeIds != ''">tutorable_grade_ids,</if>
+            <if test="studentRequire != null and studentRequire != ''">student_require,</if>
+            <if test="teachingMode != null and teachingMode != ''">teaching_mode,</if>
+            <if test="availableTime != null and availableTime != ''">available_time,</if>
+            <if test="expectedSalary != null">expected_salary,</if>
+            <if test="trialTime != null and trialTime != ''">trial_time,</if>
+            <if test="middleScore != null">middle_score,</if>
+            <if test="highScore != null">high_score,</if>
+            <if test="constellation != null and constellation != ''">constellation,</if>
+            <if test="serviceCount != null">service_count,</if>
+            <if test="avgScore != null">avg_score,</if>
+            <if test="points != null">points,</if>
+            <if test="labHours != null">lab_hours,</if>
+            <if test="diyHours != null">diy_hours,</if>
+            <if test="acceptMinimalist != null and acceptMinimalist != ''">accept_minimalist,</if>
+            <if test="otherInfo != null and otherInfo != ''">other_info,</if>
+            <if test="personalProfile != null and personalProfile != ''">personal_profile,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="auditStatus != null and auditStatus != ''">audit_status,</if>
+            <if test="auditTime != null">audit_time,</if>
+            <if test="auditRemark != null and auditRemark != ''">audit_remark,</if>
+            <if test="delFlag != null and delFlag != ''">del_flag,</if>
+            <if test="depositAmount != null">deposit_amount,</if>
+            <if test="depositTransactionId != null and depositTransactionId != ''">deposit_transaction_id,</if>
+            <if test="depositStatus != null and depositStatus != ''">deposit_status,</if>
+            <if test="createBy != null and createBy != ''">create_by,</if>
+            <if test="remark != null and remark != ''">remark,</if>
+            create_time
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="tutorNo != null and tutorNo != ''">#{tutorNo},</if>
+            <if test="province != null and province != ''">#{province},</if>
+            <if test="city != null and city != ''">#{city},</if>
+            <if test="district != null and district != ''">#{district},</if>
+            <if test="address != null and address != ''">#{address},</if>
+            <if test="longitude != null">#{longitude},</if>
+            <if test="latitude != null">#{latitude},</if>
+            <if test="nativePlace != null and nativePlace != ''">#{nativePlace},</if>
+            <if test="tutorName != null and tutorName != ''">#{tutorName},</if>
+            <if test="gender != null and gender != ''">#{gender},</if>
+            <if test="age != null">#{age},</if>
+            <if test="phone != null and phone != ''">#{phone},</if>
+            <if test="avatarImages != null and avatarImages != ''">#{avatarImages},</if>
+            <if test="teacherType != null and teacherType != ''">#{teacherType},</if>
+            <if test="crimeRecordCert != null and crimeRecordCert != ''">#{crimeRecordCert},</if>
+            <if test="idCard != null and idCard != ''">#{idCard},</if>
+            <if test="openid != null and openid != ''">#{openid},</if>
+            <if test="gradeId != null">#{gradeId},</if>
+            <if test="university != null and university != ''">#{university},</if>
+            <if test="major != null and major != ''">#{major},</if>
+            <if test="subjectIds != null and subjectIds != ''">#{subjectIds},</if>
+            <if test="tutorableGradeIds != null and tutorableGradeIds != ''">#{tutorableGradeIds},</if>
+            <if test="studentRequire != null and studentRequire != ''">#{studentRequire},</if>
+            <if test="teachingMode != null and teachingMode != ''">#{teachingMode},</if>
+            <if test="availableTime != null and availableTime != ''">#{availableTime},</if>
+            <if test="expectedSalary != null">#{expectedSalary},</if>
+            <if test="trialTime != null and trialTime != ''">#{trialTime},</if>
+            <if test="middleScore != null">#{middleScore},</if>
+            <if test="highScore != null">#{highScore},</if>
+            <if test="constellation != null and constellation != ''">#{constellation},</if>
+            <if test="serviceCount != null">#{serviceCount},</if>
+            <if test="avgScore != null">#{avgScore},</if>
+            <if test="points != null">#{points},</if>
+            <if test="labHours != null">#{labHours},</if>
+            <if test="diyHours != null">#{diyHours},</if>
+            <if test="acceptMinimalist != null and acceptMinimalist != ''">#{acceptMinimalist},</if>
+            <if test="otherInfo != null and otherInfo != ''">#{otherInfo},</if>
+            <if test="personalProfile != null and personalProfile != ''">#{personalProfile},</if>
+            <if test="status != null and status != ''">#{status},</if>
+            <if test="auditStatus != null and auditStatus != ''">#{auditStatus},</if>
+            <if test="auditTime != null">#{auditTime},</if>
+            <if test="auditRemark != null and auditRemark != ''">#{auditRemark},</if>
+            <if test="delFlag != null and delFlag != ''">#{delFlag},</if>
+            <if test="depositAmount != null">#{depositAmount},</if>
+            <if test="depositTransactionId != null and depositTransactionId != ''">#{depositTransactionId},</if>
+            <if test="depositStatus != null and depositStatus != ''">#{depositStatus},</if>
+            <if test="createBy != null and createBy != ''">#{createBy},</if>
+            <if test="remark != null and remark != ''">#{remark},</if>
+            sysdate()
+        </trim>
+    </insert>
+
+    <update id="updateTTutorInfo" parameterType="TTutorInfo">
+        update t_tutor_info
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="province != null and province != ''">province = #{province},</if>
+            <if test="city != null and city != ''">city = #{city},</if>
+            <if test="district != null and district != ''">district = #{district},</if>
+            <if test="address != null and address != ''">address = #{address},</if>
+            <if test="longitude != null">longitude = #{longitude},</if>
+            <if test="latitude != null">latitude = #{latitude},</if>
+            <if test="nativePlace != null and nativePlace != ''">native_place = #{nativePlace},</if>
+            <if test="tutorName != null and tutorName != ''">tutor_name = #{tutorName},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="age != null">age = #{age},</if>
+            <if test="phone != null and phone != ''">phone = #{phone},</if>
+            <if test="avatarImages != null">avatar_images = #{avatarImages},</if>
+            <if test="teacherType != null">teacher_type = #{teacherType},</if>
+            <if test="crimeRecordCert != null">crime_record_cert = #{crimeRecordCert},</if>
+            <if test="idCard != null and idCard != ''">id_card = #{idCard},</if>
+            <if test="likeCount != null">like_count = #{likeCount},</if>
+            <if test="gradeId != null">grade_id = #{gradeId},</if>
+            <if test="university != null and university != ''">university = #{university},</if>
+            <if test="major != null and major != ''">major = #{major},</if>
+            <if test="subjectIds != null">subject_ids = #{subjectIds},</if>
+            <if test="tutorableGradeIds != null">tutorable_grade_ids = #{tutorableGradeIds},</if>
+            <if test="studentRequire != null">student_require = #{studentRequire},</if>
+            <if test="teachingMode != null">teaching_mode = #{teachingMode},</if>
+            <if test="availableTime != null">available_time = #{availableTime},</if>
+            <if test="expectedSalary != null">expected_salary = #{expectedSalary},</if>
+            <if test="trialTime != null">trial_time = #{trialTime},</if>
+            <if test="middleScore != null">middle_score = #{middleScore},</if>
+            <if test="highScore != null">high_score = #{highScore},</if>
+            <if test="constellation != null and constellation != ''">constellation = #{constellation},</if>
+            <if test="labHours != null">lab_hours = #{labHours},</if>
+            <if test="diyHours != null">diy_hours = #{diyHours},</if>
+            <if test="acceptMinimalist != null">accept_minimalist = #{acceptMinimalist},</if>
+            <if test="otherInfo != null">other_info = #{otherInfo},</if>
+            <if test="personalProfile != null">personal_profile = #{personalProfile},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+            <if test="auditStatus != null and auditStatus != ''">audit_status = #{auditStatus},</if>
+            <if test="auditTime != null">audit_time = #{auditTime},</if>
+            <if test="auditRemark != null">audit_remark = #{auditRemark},</if>
+            <if test="depositAmount != null">deposit_amount = #{depositAmount},</if>
+            <if test="depositTransactionId != null">deposit_transaction_id = #{depositTransactionId},</if>
+            <if test="depositStatus != null">deposit_status = #{depositStatus},</if>
+            <if test="updateBy != null and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            update_time = sysdate()
+        </trim>
+        where tutor_id = #{tutorId}
+    </update>
+
+    <delete id="deleteTTutorInfoByTutorId" parameterType="Long">
+        update t_tutor_info set del_flag = '2' where tutor_id = #{tutorId}
+    </delete>
+
+    <delete id="deleteTTutorInfoByTutorIds" parameterType="Long">
+        update t_tutor_info set del_flag = '2' where tutor_id in
+        <foreach item="tutorId" collection="array" open="(" separator="," close=")">
+            #{tutorId}
+        </foreach>
+    </delete>
+
+    <update id="autoAuditPass">
+        update t_tutor_info
+        set audit_status = '1',
+            audit_time = NOW(),
+            audit_remark = '自动审核通过',
+            update_time = NOW()
+        where audit_status = '0'
+          and del_flag = '0'
+          and TIMESTAMPDIFF(HOUR, create_time, NOW()) >= 24
+    </update>
+
+    <!-- 查询附近的家教老师（按距离排序） -->
+    <select id="selectNearbyTutors" resultMap="TTutorInfoResult">
+        select t.tutor_id, t.tutor_no, t.province, t.city, t.district, t.address, t.longitude, t.latitude, t.native_place,
+               t.tutor_name, t.gender, t.age, t.phone, t.avatar_images, t.teacher_type, t.openid, t.like_count, t.grade_id,
+               t.university, t.major, t.subject_ids,
+               t.student_require, t.teaching_mode, t.available_time, t.expected_salary,
+               t.middle_score, t.high_score, t.constellation, t.service_count, t.avg_score, t.points,
+               t.personal_profile, t.status, t.audit_status,
+               q.qualification_id, q.teaching_experience, q.character_intro, q.other_advantage,
+               <!-- 使用Haversine公式计算距离（单位：公里） -->
+               ROUND(
+                   6371 * 2 * ASIN(
+                       SQRT(
+                           POWER(SIN((#{latitude} - t.latitude) * PI() / 180 / 2), 2) +
+                           COS(#{latitude} * PI() / 180) * COS(t.latitude * PI() / 180) *
+                           POWER(SIN((#{longitude} - t.longitude) * PI() / 180 / 2), 2)
+                       )
+                   ), 2
+               ) as distance
+        from t_tutor_info t
+        left join t_tutor_qualification q on t.tutor_id = q.tutor_id
+        where t.del_flag = '0'
+          and t.status = '0'
+          and t.audit_status = '1'
+          and t.latitude is not null
+          and t.longitude is not null
+        order by distance asc, t.like_count desc, t.create_time desc
+        limit #{offset}, #{limit}
+    </select>
+
+    <!-- 查询优秀家教老师（按点赞数排序） -->
+    <select id="selectExcellentTutors" resultMap="TTutorInfoResult">
+        <include refid="selectTTutorInfoVo"/>
+        where t.del_flag = '0'
+          and t.status = '0'
+          and t.audit_status = '1'
+        order by t.like_count desc, t.avg_score desc, t.service_count desc, t.create_time desc
+        limit #{offset}, #{limit}
+    </select>
+
+    <!-- 按科目名称查询家教老师列表 -->
+    <select id="selectTutorsBySubject" resultMap="TTutorInfoResult">
+        <include refid="selectTTutorInfoVo"/>
+        where t.del_flag = '0'
+          and t.status = '0'
+          and t.audit_status = '1'
+          and FIND_IN_SET(#{subjectId}, t.subject_ids) > 0
+        order by t.like_count desc, t.avg_score desc, t.service_count desc, t.create_time desc
+        limit #{offset}, #{limit}
+    </select>
+
+    <!-- 按年级ID查询家教老师列表 -->
+    <select id="selectTutorsByGrade" resultMap="TTutorInfoResult">
+        <include refid="selectTTutorInfoVo"/>
+        where t.del_flag = '0'
+          and t.status = '0'
+          and t.audit_status = '1'
+          and FIND_IN_SET(#{gradeId}, t.tutorable_grade_ids) > 0
+        order by t.like_count desc, t.avg_score desc, t.service_count desc, t.create_time desc
+        limit #{offset}, #{limit}
+    </select>
+
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tutor.system.mapper.TTutorQualificationMapper">
+
+    <resultMap type="TTutorQualification" id="TTutorQualificationResult">
+        <result property="qualificationId"    column="qualification_id"    />
+        <result property="tutorId"    column="tutor_id"    />
+        <result property="teacherCertificate"    column="teacher_certificate"    />
+        <result property="teachingExperience"    column="teaching_experience"    />
+        <result property="characterIntro"    column="character_intro"    />
+        <result property="honorImages"    column="honor_images"    />
+        <result property="otherAdvantage"    column="other_advantage"    />
+        <result property="resumeUrl"    column="resume_url"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <select id="selectTTutorQualificationByTutorId" parameterType="Long" resultMap="TTutorQualificationResult">
+        select qualification_id, tutor_id, teacher_certificate, teaching_experience, character_intro,
+               honor_images, other_advantage, resume_url, create_time, update_time
+        from t_tutor_qualification
+        where tutor_id = #{tutorId}
+        limit 1
+    </select>
+
+    <insert id="insertTTutorQualification" parameterType="TTutorQualification">
+        insert into t_tutor_qualification
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="tutorId != null">tutor_id,</if>
+            <if test="teacherCertificate != null and teacherCertificate != ''">teacher_certificate,</if>
+            <if test="teachingExperience != null and teachingExperience != ''">teaching_experience,</if>
+            <if test="characterIntro != null and characterIntro != ''">character_intro,</if>
+            <if test="honorImages != null and honorImages != ''">honor_images,</if>
+            <if test="otherAdvantage != null and otherAdvantage != ''">other_advantage,</if>
+            <if test="resumeUrl != null and resumeUrl != ''">resume_url,</if>
+            create_time
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="tutorId != null">#{tutorId},</if>
+            <if test="teacherCertificate != null and teacherCertificate != ''">#{teacherCertificate},</if>
+            <if test="teachingExperience != null and teachingExperience != ''">#{teachingExperience},</if>
+            <if test="characterIntro != null and characterIntro != ''">#{characterIntro},</if>
+            <if test="honorImages != null and honorImages != ''">#{honorImages},</if>
+            <if test="otherAdvantage != null and otherAdvantage != ''">#{otherAdvantage},</if>
+            <if test="resumeUrl != null and resumeUrl != ''">#{resumeUrl},</if>
+            sysdate()
+        </trim>
+    </insert>
+
+    <update id="updateTTutorQualification" parameterType="TTutorQualification">
+        update t_tutor_qualification
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="teacherCertificate != null">teacher_certificate = #{teacherCertificate},</if>
+            <if test="teachingExperience != null">teaching_experience = #{teachingExperience},</if>
+            <if test="characterIntro != null">character_intro = #{characterIntro},</if>
+            <if test="honorImages != null">honor_images = #{honorImages},</if>
+            <if test="otherAdvantage != null">other_advantage = #{otherAdvantage},</if>
+            <if test="resumeUrl != null">resume_url = #{resumeUrl},</if>
+            update_time = sysdate()
+        </trim>
+        where tutor_id = #{tutorId}
+    </update>
+
+    <delete id="deleteTTutorQualificationByTutorId" parameterType="Long">
+        delete from t_tutor_qualification where tutor_id = #{tutorId}
+    </delete>
+
+</mapper>

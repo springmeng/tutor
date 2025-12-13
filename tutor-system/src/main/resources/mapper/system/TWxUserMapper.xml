@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tutor.system.mapper.TWxUserMapper">
+
+    <resultMap type="TWxUser" id="TWxUserResult">
+        <result property="userId"    column="user_id"    />
+        <result property="openid"    column="openid"    />
+        <result property="unionid"    column="unionid"    />
+        <result property="inviterId"    column="inviter_id"    />
+        <result property="nickname"    column="nickname"    />
+        <result property="avatar"    column="avatar"    />
+        <result property="gender"    column="gender"    />
+        <result property="phone"    column="phone"    />
+        <result property="userType"    column="user_type"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="tutorId"    column="tutor_id"    />
+        <result property="parentNo"    column="parent_no"    />
+        <result property="tutorNo"    column="tutor_no"    />
+        <result property="status"    column="status"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="lastLoginTime"    column="last_login_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="points"    column="points"    />
+        <result property="avgRating"    column="avg_rating"    />
+        <result property="totalEvaluations"    column="total_evaluations"    />
+    </resultMap>
+
+    <sql id="selectWxUserVo">
+        select user_id, openid, unionid, inviter_id, nickname, avatar, gender, phone, user_type,
+               parent_id, tutor_id, status, del_flag, create_time, update_time, last_login_time, remark,
+               points, avg_rating, total_evaluations
+        from t_wx_user
+    </sql>
+
+    <select id="selectWxUserByOpenid" parameterType="String" resultMap="TWxUserResult">
+        <include refid="selectWxUserVo"/>
+        where openid = #{openid} and del_flag = '0'
+    </select>
+
+    <select id="selectWxUserByPhone" parameterType="String" resultMap="TWxUserResult">
+        <include refid="selectWxUserVo"/>
+        where phone = #{phone} and del_flag = '0'
+    </select>
+
+    <select id="selectWxUserByUserId" parameterType="Long" resultMap="TWxUserResult">
+        <include refid="selectWxUserVo"/>
+        where user_id = #{userId}
+    </select>
+
+    <select id="selectWxUserByParentId" parameterType="Long" resultMap="TWxUserResult">
+        <include refid="selectWxUserVo"/>
+        where parent_id = #{parentId} and del_flag = '0'
+        limit 1
+    </select>
+
+    <select id="selectWxUserByTutorId" parameterType="Long" resultMap="TWxUserResult">
+        <include refid="selectWxUserVo"/>
+        where tutor_id = #{tutorId} and del_flag = '0'
+        limit 1
+    </select>
+
+    <select id="selectAllUsers" resultMap="TWxUserResult">
+        <include refid="selectWxUserVo"/>
+        where del_flag = '0'
+        order by create_time desc
+    </select>
+
+    <insert id="insertWxUser" parameterType="TWxUser" useGeneratedKeys="false">
+        insert into t_wx_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="openid != null and openid != ''">openid,</if>
+            <if test="unionid != null">unionid,</if>
+            <if test="inviterId != null">inviter_id,</if>
+            <if test="nickname != null">nickname,</if>
+            <if test="avatar != null">avatar,</if>
+            <if test="gender != null">gender,</if>
+            <if test="phone != null">phone,</if>
+            <if test="userType != null">user_type,</if>
+            <if test="parentId != null">parent_id,</if>
+            <if test="tutorId != null">tutor_id,</if>
+            <if test="status != null">status,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="lastLoginTime != null">last_login_time,</if>
+            <if test="remark != null">remark,</if>
+            <if test="points != null">points,</if>
+            <if test="avgRating != null">avg_rating,</if>
+            <if test="totalEvaluations != null">total_evaluations,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="openid != null and openid != ''">#{openid},</if>
+            <if test="unionid != null">#{unionid},</if>
+            <if test="inviterId != null">#{inviterId},</if>
+            <if test="nickname != null">#{nickname},</if>
+            <if test="avatar != null">#{avatar},</if>
+            <if test="gender != null">#{gender},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="userType != null">#{userType},</if>
+            <if test="parentId != null">#{parentId},</if>
+            <if test="tutorId != null">#{tutorId},</if>
+            <if test="status != null">#{status},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="lastLoginTime != null">#{lastLoginTime},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="points != null">#{points},</if>
+            <if test="avgRating != null">#{avgRating},</if>
+            <if test="totalEvaluations != null">#{totalEvaluations},</if>
+         </trim>
+    </insert>
+
+    <update id="updateWxUser" parameterType="TWxUser">
+        update t_wx_user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="unionid != null">unionid = #{unionid},</if>
+            <if test="inviterId != null">inviter_id = #{inviterId},</if>
+            <if test="nickname != null">nickname = #{nickname},</if>
+            <if test="avatar != null">avatar = #{avatar},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="userType != null">user_type = #{userType},</if>
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="tutorId != null">tutor_id = #{tutorId},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="lastLoginTime != null">last_login_time = #{lastLoginTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="points != null">points = #{points},</if>
+            <if test="avgRating != null">avg_rating = #{avgRating},</if>
+            <if test="totalEvaluations != null">total_evaluations = #{totalEvaluations},</if>
+        </trim>
+        where user_id = #{userId}
+    </update>
+
+    <delete id="deleteWxUserByUserId" parameterType="Long">
+        update t_wx_user set del_flag = '2' where user_id = #{userId}
+    </delete>
+
+    <select id="selectTWxUserList" parameterType="TWxUser" resultMap="TWxUserResult">
+        select wu.user_id, wu.openid, wu.unionid, wu.inviter_id, wu.nickname, wu.avatar, wu.gender, wu.phone, wu.user_type,
+               wu.parent_id, wu.tutor_id, wu.status, wu.del_flag, wu.create_time, wu.update_time, wu.last_login_time, wu.remark,
+               wu.points, wu.avg_rating, wu.total_evaluations,
+               pi.parent_no, ti.tutor_no
+        from t_wx_user wu
+        left join t_parent_info pi on wu.parent_id = pi.parent_id
+        left join t_tutor_info ti on wu.tutor_id = ti.tutor_id
+        <where>
+            wu.del_flag = '0'
+            <if test="openid != null and openid != ''"> and wu.openid like concat('%', #{openid}, '%')</if>
+            <if test="status != null and status != ''"> and wu.status = #{status}</if>
+            <if test="params.beginTime != null and params.beginTime != ''">
+                and date_format(wu.create_time,'%y%m%d') &gt;= date_format(#{params.beginTime},'%y%m%d')
+            </if>
+            <if test="params.endTime != null and params.endTime != ''">
+                and date_format(wu.create_time,'%y%m%d') &lt;= date_format(#{params.endTime},'%y%m%d')
+            </if>
+        </where>
+        order by wu.create_time desc
+    </select>
+
+    <select id="selectTWxUserByUserId" parameterType="Long" resultMap="TWxUserResult">
+        <include refid="selectWxUserVo"/>
+        where user_id = #{userId}
+    </select>
+
+</mapper>
