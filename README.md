@@ -549,18 +549,19 @@ http://localhost:8080/swagger-ui/index.html
 
 感谢以下开源项目：
 
+- [烟台深迅信息科技](https://shenxunsoft.com/)
+- [开发攀登网](https://www.pdxmw.com/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Vue.js](https://vuejs.org/)
 - [Element Plus](https://element-plus.org/)
 - [uni-app](https://uniapp.dcloud.io/)
 - [MyBatis](https://mybatis.org/)
-- [若依](https://www.ruoyi.vip/)
 
 ---
 
 <div align="center">
 **Built with ❤️ by shenxunTeam**
 
-© 2025 最后一公里家教预约平台 All Rights Reserved
+© 小孟技术团队 All Rights Reserved
 
 </div>
