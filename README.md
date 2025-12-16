@@ -334,9 +334,8 @@ const baseURL = 'https://your-domain.com'; // 生产环境API地址
 
 
 #### 首页展示
-<center>
+
 ![输入图片说明](picture/QQ20251125-110401.png)
-</center>
 
 #### 家长端
 ![输入图片说明](picture/QQ20251125-110415.png)
