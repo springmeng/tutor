@@ -1,165 +1,255 @@
-# 最后一公里家教预约平台
+<div align="center"> 
+
+# 🏯寺院引导宣传管理系统</div>
 
 <div align="center">
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.5.15-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![Vue](https://img.shields.io/badge/Vue-3.5.16-green.svg)](https://vuejs.org/)
-[![uni-app](https://img.shields.io/badge/uni--app-latest-blue.svg)](https://uniapp.dcloud.io/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.1.0-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![Vue](https://img.shields.io/badge/Vue.js-2.x%2F3.x-4FC08D.svg)](https://vuejs.org/)
+[![UniApp](https://img.shields.io/badge/UniApp-跨平台-00B9FF.svg)](https://uniapp.dcloud.io/)
+[![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-blue.svg)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-一个专业的家教预约平台，连接优秀教师与家长，提供便捷的家教服务
+**一个功能完整、界面美观的寺院管理与宣传系统**
 
-如果这个项目对您有帮助，右上角请给我们一个 Star ⭐非常感谢
+支持多寺院机构独立运营 | 跨平台（小程序/H5/App） | 微信支付集成
+
+[在线体验](#在线体验) · [快速开始](#快速开始) · [功能特性](#功能特性) · [技术架构](#技术架构)
 
 </div>
 
 ---
 
-## 📖 项目介绍
+## 📖 项目简介
 
-最后一公里家教预约平台是一个完整的家教服务解决方案，包含微信小程序端、Web管理后台和后端服务系统。平台支持家长发布教学需求、教师接单、试课预约、在线评价、作业管理、推广返利等完整业务流程，为家教服务提供全方位的数字化支持。
+本系统是一个专为寺院、寺庙设计的综合性引导宣传管理平台，集寺院展示、法会管理、供养服务、商城系统、预约管理等功能于一体。系统采用前后端分离架构，支持多寺院机构独立运营，界面设计庄重典雅，功能齐全实用。
 
-### ✨ 核心特性
+### ✨ 核心亮点
 
-- 🎯 **双端角色系统** - 支持家长端和教师端，满足不同用户需求
-- 💰 **完整的押金体系** - 家长入驻、教师入驻、需求发布、接单等多场景押金管理
-- 📝 **智能需求匹配** - 家长发布需求，系统智能推荐合适的教师
-- 🎓 **试课预约机制** - 支持预约试课，满意后再正式开课
-- ⭐ **多维度评价** - 试课评价、服务评价，保障教学质量
-- 📚 **作业管理系统** - 教师可在线布置作业，家长实时查看
-- 🎁 **推广返利功能** - 支持推广返利，激励用户传播
-- 💳 **微信支付集成** - 深度集成微信支付，交易安全便捷
-- 📊 **数据可视化** - 完善的数据统计和图表展示
-- 🔒 **权限管理系统** - 基于RBAC的完整权限控制
+- 🏛️ **多寺院SaaS架构** - 支持多个寺院机构共用一套系统，数据独立管理
+- 📱 **跨平台支持** - 一次开发，支持微信小程序、H5、App、PC Web多端运行
+- 💰 **完整支付系统** - 集成微信支付V3接口，支持多商户、支付通知、自动退款
+- 🔐 **多种登录方式** - 支持手机号登录、短信验证码、微信扫码、匿名登录
+- 🛒 **商城与订单** - 完整的商品管理、购物车、订单流程、物流跟踪
+- 📅 **预约系统** - 灵活的预约类型配置，支持在线支付和退款
+- 🙏 **供养管理** - 供佛、供灯、供花等多种供养方式，记录功德积分
+- 📸 **多媒体展示** - 寺院相册、视频展示，全方位呈现寺院风采
 
 ---
 
-## 🛠️ 技术栈
+## 🌐 在线体验
 
-系统分为移动端和后台，移动端是通过uniapp实现的，后台是通过springboot+vue实现的。
+### 📊 后台管理系统
+- **访问地址**: http://182.40.102.220:8082/end/page/login.html
+- **管理员账号**:
+  - 账号: `admin`
+  - 密码: `123456`
+- **机构账号** (永安寺):
+  - 账号: `永安寺`
+  - 密码: `123456`
 
-![输入图片说明](picture/8.png)
+### 📱 手机端 (H5版本)
+- **访问地址**: http://182.40.102.220:81/
 
-### 后端技术
+### 💻 平板端 (HD版本)
+- **访问地址**: http://182.40.102.220:82/
 
-<p align="center">
-
-| 技术 | 版本 | 说明 |
-|------|------|------|
-| Java | 1.8 | 编程语言 |
-| Spring Boot | 2.5.15 | 应用框架 |
-| Spring Security | 5.7.14 | 认证授权 |
-| MyBatis | - | ORM框架 |
-| MySQL | 8.0.24 | 数据库 |
-| Redis | - | 缓存 |
-| Druid | 1.2.23 | 连接池 |
-| Quartz | - | 定时任务 |
-| JWT | 0.9.1 | Token认证 |
-| FastJSON | 2.0.58 | JSON处理 |
-| Swagger | 3.0.0 | API文档 |
-| 阿里云OSS | - | 对象存储 |
-| 微信支付 | APIv2 | 支付接口 |
-
-</p>
-
-### 前端技术
-
-#### 管理后台 (tutor-ui)
-
-| 技术 | 版本 | 说明 |
-|------|------|------|
-| Vue | 3.5.16 | 前端框架 |
-| Vite | 6.3.5 | 构建工具 |
-| Element Plus | 2.10.7 | UI组件库 |
-| Pinia | 3.0.2 | 状态管理 |
-| Vue Router | 4.5.1 | 路由管理 |
-| Axios | 1.9.0 | HTTP客户端 |
-| ECharts | 5.6.0 | 数据可视化 |
-
-#### 小程序端 (tutor-uniapp)
-
-- **uni-app** - 跨平台开发框架
-- **Vue 3** - 前端框架
-- **uni-ui** - UI组件库（50+组件）
-- **微信小程序** - 目标平台
+> 💡 **提示**: 建议使用Chrome浏览器或微信内置浏览器访问以获得最佳体验
 
 ---
 
-## 📁 项目结构
+## 🎯 功能特性
+
+### 🏛️ 寺院管理
+- 寺院信息展示与编辑
+- 寺院图片相册管理
+- 寺院视频展示
+- 寺院公告发布
+- 多寺院机构支持（永安寺、石龙寺、普渡寺、药王禅寺、般若寺）
+
+### 🙏 法会系统
+- 法会信息发布与管理
+- 法会详情展示
+- 用户参与法会报名
+- 法会功德积分记录
+- 法会进度跟踪
+
+### 💰 供养服务
+- 供佛、供灯、供花、供果、供香、供斋等多种供养方式
+- 供养项目自定义配置
+- 用户供养记录查询
+- 功德积分统计
+- 供养榜单展示
+
+### 📅 预约系统
+- 预约类型灵活配置
+- 在线预约与支付
+- 预约状态实时更新
+- 预约取消与退款
+- 预约记录管理
+
+### 🛒 商城系统
+- 商品分类管理
+- 商品详情展示
+- 购物车功能
+- 订单下单与支付
+- 订单状态跟踪
+- 退款申请与处理
+- 物流信息查询
+
+### 👤 用户系统
+- 手机号注册登录
+- 短信验证码登录
+- 微信扫码登录
+- 匿名登录支持
+- 用户信息管理
+- 收货地址管理
+- 个人中心
+
+### 💳 支付系统
+- 微信支付V3接口集成
+- 多商户支付配置
+- 支付回调处理
+- 支付状态查询
+- 自动退款处理
+- 支付安全保障
+
+### 📸 多媒体内容
+- 相册分类管理
+- 图片批量上传
+- 视频播放展示
+- 多媒体内容审核
+
+### 💬 消息互动
+- 系统消息推送
+- 用户消息通知
+- 点赞功能
+- 消息已读状态
+
+---
+
+## 🛠️ 技术架构
+
+### 后端技术栈
+
+| 技术 | 版本 | 说明 |
+|------|------|------|
+| Spring Boot | 2.1.0.RELEASE | 核心框架 |
+| Java | 1.8 | 开发语言 |
+| MySQL | 5.7+ | 数据库 |
+| MyBatis | 1.3.2 | ORM框架 |
+| tk.mybatis | 4.1.5 | 通用Mapper |
+| PageHelper | 1.2.10 | 分页插件 |
+| Hutool | 5.3.7 | Java工具库 |
+| Apache POI | 4.1.2 | Excel处理 |
+| ZXing | 3.3.0 | 二维码生成 |
+| OkHttp3 | 3.4.2 | HTTP客户端 |
+| WeChat Pay API | v3 (0.2.12) | 微信支付 |
+| Aliyun SMS | 2.0.24 | 阿里云短信 |
+| FastJSON | 1.2.7 | JSON处理 |
+
+### 前端技术栈
+
+| 技术 | 说明 |
+|------|------|
+| UniApp | 跨平台开发框架 |
+| Vue.js | 前端MVVM框架（支持2.x/3.x） |
+| uni-ui | UniApp官方UI组件库 |
+| SCSS | CSS预处理器 |
+| HBuilderX | 开发工具 |
+
+### 系统架构 
 
 ```
-Tutor/
-├── tutor-admin/              # Spring Boot 应用入口
-│   ├── src/main/java/        # Java 源码
-│   │   └── com/tutor/web/
-│   │       ├── controller/   # 控制器层
-│   │       │   ├── miniapp/  # 小程序API
-│   │       │   ├── system/   # 系统管理API
-│   │       │   └── monitor/  # 监控API
-│   │       └── core/         # 核心配置
-│   └── src/main/resources/
-│       ├── application.yml   # 主配置
-│       ├── mapper/           # MyBatis映射
-│       └── cert/             # 微信支付证书
+┌─────────────────────────────────────────────────┐
+│                   前端层                         │
+│  ┌──────────┬──────────┬──────────┬──────────┐ │
+│  │ 微信小程序 │  H5网页  │  App应用 │  PC Web  │ │
+│  └──────────┴──────────┴──────────┴──────────┘ │
+└─────────────────────────────────────────────────┘
+                       ↓ HTTP/HTTPS
+┌─────────────────────────────────────────────────┐
+│                   应用层                         │
+│  ┌─────────────────────────────────────────┐   │
+│  │    Spring Boot (端口: 8082)              │   │
+│  │    ├─ Controller 层 (75个控制器)         │   │
+│  │    ├─ Service 层 (业务逻辑)              │   │
+│  │    ├─ DAO 层 (数据访问)                  │   │
+│  │    └─ AOP 切面 (日志、权限)              │   │
+│  └─────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────┘
+                       ↓ JDBC
+┌─────────────────────────────────────────────────┐
+│                   数据层                         │
+│  MySQL 5.7+ (siyuanyindao_multi)                │
+│  └─ 90+ 张业务数据表                            │
+└─────────────────────────────────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────────┐
+│                 第三方服务                       │
+│  ├─ 微信支付 (多商户支持)                       │
+│  ├─ 阿里云短信服务                              │
+│  ├─ 微信登录认证                                │
+│  └─ 文件存储服务                                │
+└─────────────────────────────────────────────────┘
+```
+
+---
+
+## 📂 项目结构
+
+```
+完整版/
+├── backend_multi/              # 后端项目（Spring Boot）
+│   ├── src/main/
+│   │   ├── java/com/example/
+│   │   │   ├── aop/           # AOP切面
+│   │   │   ├── common/        # 公共模块
+│   │   │   ├── config/        # 配置类
+│   │   │   ├── controller/    # 控制器层（75个）
+│   │   │   ├── dao/           # 数据访问层
+│   │   │   ├── entity/        # 实体类（90+个）
+│   │   │   ├── service/       # 业务逻辑层
+│   │   │   ├── util/          # 工具类
+│   │   │   └── vo/            # 数据传输对象
+│   │   ├── resources/
+│   │   │   ├── application.yml            # 主配置
+│   │   │   ├── application-dev.yml        # 开发环境
+│   │   │   ├── application-prod.yml       # 生产环境
+│   │   │   ├── mapper/                    # MyBatis映射
+│   │   │   └── static/                    # 静态资源
+│   │   └── test/              # 测试代码
+│   └── pom.xml                # Maven依赖配置
 │
-├── tutor-framework/          # 框架核心模块
-│   └── src/main/java/com/tutor/framework/
-│       ├── config/           # 系统配置
-│       ├── security/         # 安全认证
-│       ├── aspectj/          # AOP切面
-│       └── interceptor/      # 拦截器
-│
-├── tutor-system/             # 系统业务模块
-│   └── src/main/java/com/tutor/system/
-│       ├── controller/       # 系统控制器
-│       ├── domain/           # 实体类、VO
-│       ├── mapper/           # 数据映射
-│       └── service/          # 业务服务
-│
-├── tutor-common/             # 通用工具模块
-├── tutor-quartz/             # 定时任务模块
-├── tutor-generator/          # 代码生成模块
-│
-├── tutor-ui/                 # Vue3 管理后台
-│   ├── src/
-│   │   ├── api/              # API接口
-│   │   ├── assets/           # 静态资源
-│   │   ├── components/       # 公共组件（27个）
-│   │   ├── layout/           # 布局组件
-│   │   ├── router/           # 路由配置
-│   │   ├── store/            # Pinia状态管理
-│   │   ├── utils/            # 工具函数
-│   │   └── views/            # 页面视图
-│   └── vite.config.js        # Vite配置
-│
-├── tutor-uniapp/             # uni-app 小程序
-│   ├── pages/                # 页面（14个模块）
+├── front/                      # 前端项目（标准版）
+│   ├── pages/                 # 页面文件（62个）
 │   │   ├── index/            # 首页
-│   │   ├── parent/           # 家长端
-│   │   ├── teacher/          # 教师端
-│   │   ├── my/               # 个人中心
-│   │   ├── payment/          # 支付模块
-│   │   ├── order/            # 订单管理
-│   │   ├── evaluation/       # 评价模块
-│   │   ├── homework/         # 作业管理
-│   │   └── ...
-│   ├── api/                  # API接口（17个模块）
-│   ├── components/           # 公共组件
+│   │   ├── login/            # 登录
+│   │   ├── siyuan_*/         # 寺院相关
+│   │   ├── foshi_*/          # 佛事相关
+│   │   ├── fahui_*/          # 法会相关
+│   │   ├── goods_*/          # 商品相关
+│   │   ├── cart/             # 购物车
+│   │   ├── order_*/          # 订单相关
+│   │   ├── yuyue_*/          # 预约相关
+│   │   └── my/               # 个人中心
+│   ├── components/           # 自定义组件
+│   ├── uni_modules/          # UniApp组件库
+│   ├── request/              # HTTP请求封装
 │   ├── utils/                # 工具函数
-│   ├── uni_modules/          # uni-ui组件库
+│   ├── static/               # 静态资源
+│   ├── App.vue               # 应用主组件
+│   ├── main.js               # 入口文件
 │   ├── pages.json            # 页面配置
-│   └── manifest.json         # 小程序配置
+│   └── manifest.json         # 应用清单
 │
-├── sql/
-│   └── tutor.sql             # 数据库脚本（54张表）
+├── frontHD/                   # 前端项目（高清版）
+│   └── [结构同 front]
 │
-├── bin/                      # 构建脚本
-│   ├── run.bat               # 运行脚本
-│   ├── package.bat           # 打包脚本
-│   └── clean.bat             # 清理脚本
+├── db/                        # 数据库文件
+│   └── siyuanyindao_multi.sql # 数据库脚本（1.8M）
 │
-├── pom.xml                   # Maven父配置
-└── README.md                 # 项目说明
+└── README.md                  # 项目说明文档
 ```
 
 ---
@@ -168,400 +258,310 @@ Tutor/
 
 ### 环境要求
 
-- **JDK**: 1.8+
+- **Java**: JDK 1.8+
 - **Maven**: 3.6+
-- **MySQL**: 8.0+
-- **Redis**: 5.0+
-- **Node.js**: 16+
-- **HBuilderX**: 最新版（用于小程序开发）
+- **MySQL**: 5.7+ (推荐8.0)
+- **Node.js**: 12.0+ (前端开发)
+- **HBuilderX**: 最新版 (前端开发工具)
 
 ### 后端部署
 
-#### 1. 创建数据库
+#### 1. 导入数据库
 
 ```bash
-# 登录MySQL，创建数据库
+# 登录MySQL
 mysql -u root -p
-CREATE DATABASE tutor DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-# 导入SQL脚本
-use tutor;
-source sql/tutor.sql;
+# 创建数据库
+CREATE DATABASE siyuanyindao_multi DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+# 导入数据
+USE siyuanyindao_multi;
+SOURCE db/siyuanyindao_multi.sql;
 ```
 
-#### 2. 修改配置
+#### 2. 修改配置文件
 
-编辑 `tutor-admin/src/main/resources/application.yml`：
+编辑 `backend_multi/src/main/resources/application-dev.yml`:
 
 ```yaml
-# 数据库配置
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/tutor?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-    username: root
-    password: your_password
+    url: jdbc:mysql://localhost:3306/siyuanyindao_multi?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root        # 修改为你的数据库用户名
+    password: your_password   # 修改为你的数据库密码
 
-# Redis配置
-  redis:
-    host: localhost
-    port: 6379
-    password: your_redis_password
-
-# 微信小程序配置
-wx:
-  miniapp:
-    appId: your_appid
-    appSecret: your_appsecret
-
-# 微信支付配置
-wxpay:
-  mchId: your_mch_id
-  apiKey: your_api_key
-
-# 阿里云OSS配置（可选）
-aliyun:
-  oss:
-    accessKeyId: your_access_key_id
-    accessKeySecret: your_access_key_secret
-    bucketName: your_bucket_name
+# 文件上传路径（根据实际情况修改）
+file:
+  upload-path: D:/upload/   # Windows示例
+  # upload-path: /www/wwwroot/upload/  # Linux示例
 ```
 
-#### 3. 编译运行
+#### 3. 启动后端服务
 
 ```bash
-# 使用Maven打包
-cd Tutor
-mvn clean package
+# 进入后端目录
+cd backend_multi
 
-# 运行（Windows）
-bin/run.bat
+# Maven构建
+mvn clean package -DskipTests
 
-# 运行（Linux/Mac）
-java -jar tutor-admin/target/tutor-admin.jar
+# 运行
+java -jar target/siyuanyindao-1.1.3-SNAPSHOT.jar
 
-# 访问后台管理系统
-# http://localhost:8080
-# 默认账号: admin
-# 默认密码: admin123
+# 或使用IDE（IDEA/Eclipse）直接运行主类
+# com.example.Application
 ```
+
+服务启动成功后，访问: http://localhost:8082
 
 ### 前端部署
 
-#### 1. 安装依赖
+#### 方式一: HBuilderX开发
+
+1. 使用HBuilderX打开 `front` 或 `frontHD` 目录
+2. 修改 `request/config.js` 中的API地址:
+   ```javascript
+   const baseUrl = 'http://localhost:8082'; // 修改为你的后端地址
+   ```
+3. 在HBuilderX中选择"运行" -> "运行到浏览器" 或 "运行到小程序模拟器"
+
+#### 方式二: 命令行编译
 
 ```bash
-cd tutor-ui
+# 进入前端目录
+cd front
+
+# 安装依赖（首次运行）
 npm install
+
+# H5编译
+npm run build:h5
+
+# 小程序编译
+npm run build:mp-weixin
+
+# 编译后的文件在 unpackage/dist 目录
 ```
 
-#### 2. 修改配置
+#### 前端配置说明
 
-编辑 `.env.development`：
-
-```env
-# 开发环境配置
-VITE_APP_BASE_API = '/dev-api'
-```
-
-编辑 `vite.config.js` 中的代理地址：
+编辑 `request/config.js`:
 
 ```javascript
-proxy: {
-  '/dev-api': {
-    target: 'http://localhost:8080',  // 后端地址
-    changeOrigin: true,
-    rewrite: (path) => path.replace(/^\/dev-api/, '')
-  }
+// 配置后端API地址
+const config = {
+  baseUrl: 'http://localhost:8082',  // 开发环境
+  // baseUrl: 'http://182.40.102.220:8082',  // 生产环境
+
+  // 机构编码
+  orgCode: 'yas',  // yas-永安寺, sls-石龙寺, pds-普渡寺
+
+  // 机构ID
+  orgId: 50,  // 50-永安寺, 58-石龙寺, 59-普渡寺
 }
 ```
 
-#### 3. 启动开发服务器
+### 生产部署建议
+
+#### 后端部署
 
 ```bash
-# 开发模式
-npm run dev
+# 1. 打包
+mvn clean package -DskipTests
 
-# 访问地址：http://localhost:80
-```
+# 2. 使用systemd或supervisor管理服务
+# 3. 配置Nginx反向代理
 
-#### 4. 生产构建
+# Nginx配置示例
+server {
+    listen 80;
+    server_name yourdomain.com;
 
-```bash
-npm run build:prod
-```
+    location /api {
+        proxy_pass http://localhost:8082;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
 
-### 小程序部署
-
-#### 1. 导入项目
-
-使用 **HBuilderX** 打开 `tutor-uniapp` 目录
-
-#### 2. 修改配置
-
-编辑 `manifest.json`：
-
-```json
-{
-  "mp-weixin": {
-    "appid": "your_appid"
-  }
+    location / {
+        root /www/wwwroot/front/dist;
+        try_files $uri $uri/ /index.html;
+    }
 }
 ```
 
-编辑小程序API地址（如 `utils/request.js`）：
+#### 前端部署
 
-```javascript
-const baseURL = 'https://your-domain.com'; // 生产环境API地址
-// const baseURL = 'http://localhost:8080'; // 开发环境API地址
+```bash
+# H5版本：直接将编译后的文件部署到Web服务器
+cp -r unpackage/dist/build/h5/* /www/wwwroot/yourdomain/
+
+# 小程序：使用微信开发者工具上传代码审核发布
 ```
 
-#### 3. 运行调试
-
-- 点击 HBuilderX 菜单：运行 -> 运行到小程序模拟器 -> 微信开发者工具
-- 或使用微信开发者工具直接打开 `tutor-uniapp` 目录
-
-#### 4. 发布上线
-
-- 在 HBuilderX 中点击：发行 -> 小程序-微信
-- 在微信开发者工具中上传代码
-- 登录微信公众平台提交审核
-
 ---
 
-## 📱 功能展示
+## 🗄️ 数据库说明
 
-### 小程序截图
-
-
-#### 首页展示
-
-![输入图片说明](picture/QQ20251125-110401.png)
-
-#### 家长端
-![输入图片说明](picture/QQ20251125-110415.png)
-
-#### 教师端
-![输入图片说明](picture/QQ20251125-110422.png)
-
-#### 订单流程
-![输入图片说明](picture/QQ20251125-110451.png)
-
-#### 个人中心
-![输入图片说明](picture/QQ20251125-110428.png)
-
-</div>
-
-</div>
-
----
-
-## 📲 体验小程序
-
-<div align="center">
-
-### 扫码体验
-
-![输入图片说明](picture/gh_54a792d85e39_258.jpg)
-
-**使用微信扫描上方二维码即可体验**
-
-</div>
-
----
-
-## 💼 核心业务流程
-
-### 家长使用流程
-
-1. **注册入驻** - 微信授权登录 → 完善个人信息 → 缴纳押金
-2. **发布需求** - 填写学生信息 → 选择科目年级 → 设置预算和要求 → 缴纳需求押金
-3. **选择教师** - 浏览教师列表 → 查看教师资质 → 预约试课
-4. **试课评价** - 试课结束 → 提交评价 → 决定是否正式开课
-5. **课程管理** - 查看作业 → 课程评价 → 查看订单
-
-### 教师使用流程
-
-1. **注册入驻** - 微信授权登录 → 上传教师资质 → 完善个人信息 → 缴纳押金
-2. **浏览需求** - 查看需求列表 → 收藏感兴趣的需求
-3. **接单试课** - 选择需求 → 缴纳接单押金 → 预约试课时间
-4. **教学服务** - 试课服务 → 正式授课 → 布置作业
-5. **收入管理** - 查看订单 → 查看收入明细
-
-### 业务亮点
-
-- ✅ **押金保障机制** - 多环节押金确保双方诚信
-- ✅ **试课满意后付费** - 降低家长选择风险
-- ✅ **教师资质审核** - 保障教学质量
-- ✅ **多维评价体系** - 促进服务质量提升
-- ✅ **推广激励机制** - 促进平台快速发展
-
----
-
-## 📊 数据库设计
-
-项目包含 **54 张数据表**，分为系统表和业务表两大类：
-
-### 核心业务表
+### 主要数据表
 
 | 表名 | 说明 |
 |------|------|
-| t_tutor_info | 家教信息表 |
-| t_tutor_demand | 家教需求表 |
-| t_tutor_qualification | 家教资质表 |
-| t_tutor_reservation | 家教预约试课表 |
-| t_parent_info | 家长信息表 |
-| t_student_info | 学生信息表 |
-| t_subject | 教学科目表 |
-| t_grade | 年级表 |
-| t_evaluation | 评价评分表 |
-| t_reservation_evaluation | 预约评价表 |
-| t_homework | 作业信息表 |
-| t_payment_record | 支付记录表 |
-| t_promotion | 推广返利表 |
-| t_wx_user | 微信用户信息表 |
+| **用户相关** |
+| user_info | 用户信息表 |
+| account | 账户表 |
+| address_info | 收货地址表 |
+| sms_code_info | 短信验证码表 |
+| **寺院相关** |
+| siyuan_info | 寺院信息表 |
+| siyuan_image_info | 寺院图片表 |
+| siyuan_video_info | 寺院视频表 |
+| foshi_info | 佛寺信息表 |
+| fahui_info | 法会信息表 |
+| fahui_user_info | 法会参与记录表 |
+| **供养相关** |
+| gongfo_info | 供养项目表 |
+| gongfo_item_info | 供养详情表 |
+| gong_user_info | 用户供养记录表 |
+| **商城相关** |
+| mall_product | 商品表 |
+| mall_category | 商品分类表 |
+| mall_order | 订单表 |
+| mall_refund | 退款表 |
+| **预约相关** |
+| yuyue_info | 预约记录表 |
+| yuyue_type_info | 预约类型表 |
+| **支付相关** |
+| order_pay_info | 支付信息表 |
+| order_refund_info | 退款信息表 |
+| **多媒体相关** |
+| photo_info | 相册表 |
+| photo_type_info | 相册分类表 |
+| video_info | 视频表 |
+| **其他** |
+| message_info | 消息表 |
+| praise_log | 点赞记录表 |
+| nx_system_file_info | 系统文件表 |
+
+---
+
+## 📱 支持平台
+
+- ✅ 微信小程序
+- ✅ H5网页 (移动端)
+- ✅ H5网页 (PC端)
+- ✅ App (Android/iOS)
+- ✅ 平板高清版
 
 ---
 
 ## 🔧 配置说明
 
-### 押金配置
+### 支持的寺院机构
 
-在 `application.yml` 中可配置各种押金金额：
+系统默认支持以下寺院机构，可根据需要扩展：
+
+| 机构名称 | 机构编码 | 机构ID |
+|---------|---------|--------|
+| 永安寺 | yas | 50 |
+| 石龙寺 | sls | 58 |
+| 普渡寺 | pds | 59 |
+| 药王禅寺 | ywcs | 60 |
+| 般若寺 | brs | 61 |
+
+### 微信支付配置
+
+编辑 `application-prod.yml` 配置微信支付参数:
 
 ```yaml
-# 押金配置
-deposit:
-  parent: 0.01        # 家长入驻押金（元）
-  tutor: 0.01         # 家教入驻押金（元）
-  demand: 0.01        # 需求发布押金（元/科目）
-  order: 0.01         # 接单押金（元）
-  reservation: 0.01   # 试课押金（元）
+wx:
+  pay:
+    mchId: 你的商户号
+    appId: 你的AppID
+    mchSerialNo: 商户证书序列号
+    apiV3Key: APIv3密钥
+    privateKeyPath: 商户私钥路径
 ```
 
-### 文件上传配置
+### 短信服务配置
 
-支持本地存储和阿里云OSS两种方式：
+配置阿里云短信服务参数:
 
 ```yaml
-# 本地存储
-file:
-  upload:
-    type: local
-    path: /upload
-
-# 阿里云OSS存储
-file:
-  upload:
-    type: oss
 aliyun:
-  oss:
-    endpoint: oss-cn-hangzhou.aliyuncs.com
-    accessKeyId: your_access_key_id
-    accessKeySecret: your_access_key_secret
-    bucketName: your_bucket_name
+  sms:
+    accessKeyId: 你的AccessKeyId
+    accessKeySecret: 你的AccessKeySecret
+    signName: 短信签名
+    templateCode: 模板编码
 ```
 
 ---
 
-## 🎯 系统功能模块
+## 📊 项目统计
 
-### 小程序端
-
-- **首页模块** - 轮播图、快捷入口、推荐家教、热门需求
-- **家长端** - 需求发布、教师浏览、订单管理、作业查看
-- **教师端** - 需求浏览、接单管理、作业布置、资质管理
-- **个人中心** - 收藏管理、订单记录、个人信息、推广返利
-- **支付模块** - 押金支付、订单支付、退款申请
-- **评价模块** - 试课评价、服务评价
-- **消息通知** - 系统公告、订单通知
-
-### 管理后台
-
-- **数据统计** - 用户统计、订单统计、收入统计、数据图表
-- **用户管理** - 家长管理、教师管理、资质审核
-- **需求管理** - 需求审核、需求列表
-- **订单管理** - 订单列表、订单详情、退款处理
-- **财务管理** - 支付记录、押金管理、收入统计
-- **内容管理** - 公告管理、轮播图管理、协议管理
-- **系统管理** - 菜单管理、角色管理、权限管理、字典管理
-- **系统监控** - 在线用户、操作日志、登录日志
-- **系统工具** - 定时任务、代码生成
+- **Java代码文件**: 373个
+- **控制器类**: 75个
+- **实体类**: 90+个
+- **MyBatis映射文件**: 70+个
+- **前端页面**: 62个
+- **数据库表**: 90+张
+- **总代码量**: 15,000+ 行
+- **项目规模**: 约130MB
 
 ---
 
-## 📝 开发说明
+## 📸 系统截图
+<div align="center">
 
-### 代码生成
+![输入图片说明](picture/ScreenShot_2025-12-17_100257_491.png)
 
-系统集成了代码生成工具，可快速生成CRUD代码：
+![输入图片说明](picture/ScreenShot_2025-12-17_100313_148.png)
 
-1. 登录管理后台
-2. 进入 系统工具 -> 代码生成
-3. 选择数据表，点击生成
-4. 下载代码包，按提示导入项目
+![输入图片说明](picture/ScreenShot_2025-12-17_100319_436.png)
 
-### 定时任务
+![输入图片说明](picture/ScreenShot_2025-12-17_100324_553.png)
 
-系统使用 Quartz 实现定时任务调度：
+![输入图片说明](picture/ScreenShot_2025-12-17_100329_688.png)
 
-1. 登录管理后台
-2. 进入 系统工具 -> 定时任务
-3. 新增任务，配置调度表达式
-4. 支持启动、停止、执行一次等操作
+![输入图片说明](picture/ScreenShot_2025-12-17_100335_801.png)
 
-### API文档
+![输入图片说明](picture/ScreenShot_2025-12-17_100339_739.png)
 
-启动后端服务后，访问 Swagger 文档：
+![输入图片说明](picture/ScreenShot_2025-12-17_100344_586.png)
 
-```
-http://localhost:8080/swagger-ui/index.html
-```
+![输入图片说明](picture/ScreenShot_2025-12-17_100354_391.png)
+
+</div>
 
 ---
 
-## 🔒 安全说明
+## 💬 联系与反馈
 
-- ✅ 使用 JWT Token 进行身份认证
-- ✅ 密码采用 BCrypt 加密存储
-- ✅ 接口权限使用 Spring Security 控制
-- ✅ SQL注入防护（MyBatis参数化查询）
-- ✅ XSS攻击防护
-- ✅ CSRF防护
-- ✅ 接口限流保护
+如有问题或建议，欢迎通过以下方式联系:
 
-## 💬 联系方式
-
-- 前后台项目体验，可找小孟，微信：codemeng
-  备注：体验
-  欢迎找我们定制开发，全网性价比最高的开发团队，详见：
-
-  https://www.yuque.com/chengxuyuanspringmeng/erc5xc/nn6v7ut3gzudmkfz?singleDoc# 《小孟团队开发-引领未来科技》
+- 📧 提交 [Issue](../../issues)
+- 🌟 给项目点个Star支持一下
 
 ---
 
-## ⭐ Star History
+## 🙏 致谢
 
-如果这个项目对您有帮助，请给我们一个 Star ⭐
+感谢以下开源项目:
 
----
-
-## 📌 致谢
-
-感谢以下开源项目：
-
-- [烟台深迅信息科技](https://shenxunsoft.com/)
-- [开发攀登网](https://www.pdxmw.com/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Vue.js](https://vuejs.org/)
-- [Element Plus](https://element-plus.org/)
-- [uni-app](https://uniapp.dcloud.io/)
+- [UniApp](https://uniapp.dcloud.io/)
 - [MyBatis](https://mybatis.org/)
+- [uni-ui](https://uniapp.dcloud.io/component/uniui/uni-ui)
 
 ---
 
 <div align="center">
-**Built with ❤️ by shenxunTeam**
 
-© 小孟技术团队 All Rights Reserved
+**如果这个项目对你有帮助，请点个 ⭐ Star 支持一下！**
+
+Made with ❤️ by shenxun开发团队
 
 </div>
